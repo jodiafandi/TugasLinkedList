@@ -29,28 +29,7 @@ int isEmpty ()
 	}
 }
 
-void tambahDepan(int databaru)
-{
-    TNode *baru;
-    baru = new TNode;
-    baru->data = databaru;
-    baru->next = baru;
 
-    if (isEmpty() == 1)
-    {
-        up=baru;
-        down=baru;
-        up->next=up;
-        down->next=down;
-    }
-    else
-    {
-    	
-        baru->next=up;
-        up=baru;
-        down->next=up;
-    
-	}
 }
 
 void tambahBelakang(int databaru)
