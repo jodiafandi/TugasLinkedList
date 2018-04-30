@@ -110,5 +110,46 @@ void hapusDepan(){
 		cout<<"Hilang --> "<<x<<endl;
 	} else cout<<"Kosong\n";
 }
+void hapusBelakang(){
+	TNode *hapus,*bantu;
+	if (isEmpty()==0){
+		int y;
+		if(up==down){
+			y=down->data;
+			up=NULL;
+			down=NULL;
+		}else{
+			bantu=up;
+			while(bantu->next != down){
+				bantu = bantu->next;
+			}
+			hapus=down;
+			down=bantu;
+			y=hapus->data;
+			down->next=up;
+			delete hapus;
+		}
+		cout<<"Hilang "<<y<<endl;
+	} else cout<<"Kosong\n";
+}
 
+void insertNode(int databaru, int datasebelum){
+	
+	   	TNode *bantu;
+    	bantu =up;
+    if (isEmpty() == 0){
+        do{
+            if(bantu->data == datasebelum){
+			TNode *baru;
+    baru = new TNode;
+    baru->data = databaru;
+    baru->next = baru;
 
+    if (isEmpty() == 1)
+    {
+        up= baru;
+        down = baru;
+        up->next =up;
+        down->next = down;
+    }
+    
