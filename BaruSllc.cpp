@@ -152,4 +152,61 @@ void insertNode(int databaru, int datasebelum){
         up->next =up;
         down->next = down;
     }
+       else
+    {
+        baru->next =up;
+        up= baru;
+        down->next =up;
+    }
+			
+			
+			}
+            bantu=bantu->next;
+        }while (bantu!=down->next);
+    } else {
+        cout<<"List Kosong";
+    }
+	
+	
+	}
+
+
+
+void hapusNode(int datahapus){
+	TNode *hapus = new TNode;
+	TNode *bantu = new TNode;
+	hapus =up;
+	for(int i=1;i<datahapus;i++){
+		bantu = hapus;
+		hapus = hapus->next;
+}
+
+bantu->next=hapus->next;
+
+}
+
+
+int main()
+{
+    init();
+    tambahBelakang(9);
+    tambahBelakang(3);
+    tambahDepan(5);
+    tambahDepan(6);
+    tambahBelakang(11);
+    cetak();
+    hapusDepan();
+    hapusBelakang();
+    cetak();
+    cout<<endl;
+    insertNode(3,5);
+    cetak();
+    cout<<endl;
+    cout<<endl;
+    hapusNode(3);
+    cout<<endl;
+    cetak();
     
+    return 0;
+}
+
